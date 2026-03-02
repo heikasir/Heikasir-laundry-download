@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hei Kasir Laundry - Download Official APK</title>
+    <style>
+        :root {
+            /* Palette berdasarkan logo Anda */
+            --primary-dark: #122037; /* Biru gelap dari logo */
+            --accent-gold: #e2b04a;  /* Emas dari logo */
+            
+            /* Warna tambahan untuk efek spektakuler */
+            --laundry-blue: #0ea5e9; /* Biru cerah laundry */
+            --laundry-purple: #8b5cf6; /* Ungu modern */
+            --pure-white: #ffffff;
+            --text-main: #1e293b;
+            --wa-green: #25D366;
+            --bubble-color: rgba(255, 255, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow: hidden; /* Mencegah scroll saat gelembung mengalir */
+            position: relative;
+            
+            /* --- Gradasi Spektakuler Full Color --- */
+            background: linear-gradient(135deg, 
+                var(--laundry-blue) 0%, 
+                var(--laundry-purple) 50%, 
+                var(--accent-gold) 100%);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Animasi Gelembung Latar Belakang --- */
+        .bubbles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none; /* Agar gelembung tidak menghalangi klik */
+        }
+
+        .bubble {
+            position: absolute;
+            background-color: var(--bubble-color);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+            opacity: 0.5;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(1); opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(0.5); opacity: 0.3; }
+        }
+
+        /* --- Posisi dan Ukuran Gelembung --- */
+        .bubble:nth-child(1) { left: 10%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 12s; }
+        .bubble:nth-child(2) { left: 25%; width: 30px; height: 30px; animation-delay: 2s; animation-duration: 10s; }
+        .bubble:nth-child(3) { left: 40%; width: 80px; height: 80px; animation-delay: 4s; animation-duration: 14s; }
+        .bubble:nth-child(4) { left: 55%; width: 40px; height: 40px; animation-delay: 1s; animation-duration: 11s; }
+        .bubble:nth-child(5) { left: 70%; width: 25px; height: 25px; animation-delay: 5s; animation-duration: 9s; }
+        .bubble:nth-child(6) { left: 85%; width: 70px; height: 70px; animation-delay: 3s; animation-duration: 13s; }
+
+        .dashboard-card {
+            /* --- Efek Frosted Glass Spektakuler --- */
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            
+            width: 100%;
+            max-width: 480px;
+            padding: 50px 30px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 10; /* Berada di atas gelembung latar */
+            overflow: hidden;
+            transition: 0.4s ease-out;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo-wrapper {
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-wrapper img {
+            width: 130px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        /* --- Animasi Gelembung Dekat Logo --- */
+        .bubble-logo {
+            position: absolute;
+            background-color: var(--laundry-blue);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: bubbleFloatLogo 4s infinite ease-in-out;
+        }
+
+        @keyframes bubbleFloatLogo {
+            0% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-20px) scale(1.3); opacity: 1; }
+            100% { transform: translateY(-40px) scale(1); opacity: 0; }
+        }
+
+        .bubble-logo:nth-child(1) { top: -15px; left: -15px; width: 20px; height: 20px; animation-delay: 0s; }
+        .bubble-logo:nth-child(2) { top: -10px; right: -20px; width: 25px; height: 25px; animation-delay: 1s; }
+        .bubble-logo:nth-child(3) { bottom: -15px; left: 15px; width: 15px; height: 15px; animation-delay: 2s; }
+
+        h1 {
+            font-size: 28px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .description {
+            font-size: 15px;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            padding: 0 15px;
+        }
+
+        .btn-download {
+            background-color: var(--primary-dark);
+            color: var(--pure-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            border-radius: 18px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(18, 32, 55, 0.3);
+        }
+
+        /* --- Efek Gelembung Spektakuler Tombol --- */
+        .btn-download::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 120%;
+            height: 120%;
+            background-image: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+            opacity: 0;
+            transition: 0.5s ease;
+            border-radius: 18px;
+            z-index: 0;
+        }
+
+        .btn-download:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(226, 176, 74, 0.4);
+        }
+
+        .btn-download:hover::before {
+            opacity: 0.4;
+        }
+
+        .btn-download span {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Kotak Instruksi Warning Android Spektakuler */
+        .install-guide {
+            background-color: rgba(255, 249, 235, 0.7);
+            border: 2px solid #f59e0b;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: left;
+            margin-top: 15px;
+            box-shadow: inset 0 2px 5px rgba(245, 158, 11, 0.2);
+        }
+
+        .guide-title {
+            display: flex;
+            align-items: center;
+            color: #92400e;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .guide-text {
+            font-size: 13px;
+            color: #b45309;
+            line-height: 1.5;
+        }
+
+        .owner-credit {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #64748b;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Tombol WhatsApp Mengambang Spektakuler --- */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--wa-green);
+            color: var(--pure-white);
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            transition: 0.4s ease-out;
+            z-index: 100;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+        }
+
+        .wa-float svg {
+            width: 35px;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <div class="dashboard-card">
+        <div class="logo-wrapper">
+            <img src="logo_owner.jpg" alt="Hei Kasir Logo">
+            <div class="bubble-logo"></div>
+            <div class="bubble-logo"></div>
+            <div class="bubble-logo"></div>
+        </div>
+
+        <h1>Hei Kasir Laundry</h1>
+        <p class="description">Solusi kasir profesional dengan sistem keamanan data <i>Immutable</i>.</p>
+
+        <a href="Hei_Kasir.apk" class="btn-download" download>
+            <span>INSTAL APK SEKARANG</span>
+        </a>
+
+        <div class="install-guide">
+            <div class="guide-title">
+                ⚠️ Perhatian Instalasi
+            </div>
+            <div class="guide-text">
+                Karena instalasi dilakukan secara manual, sistem Android mungkin akan menampilkan peringatan keamanan. Harap klik <b>"Detail Selengkapnya"</b> lalu pilih <b>"Tetap Instal/Download"</b> untuk melanjutkan pemasangan aplikasi.
+            </div>
+        </div>
+
+        <div class="owner-credit">
+            ©Developed by <b>Mochammad Azzam Arbi Afifi</b>
+        </div>
+    </div>
+
+    <a href="https://wa.me/6283830890860?text=Halo%20Azzam%2C%20saya%20mau%20melakukan%20validasi%20aplikasi%20Hei%20Kasir%20Laundry%20sebelum%20melakukan%20instalasi." class="wa-float" target="_blank">
+        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.03 21.03a9 9 0 01-9-9 9 9 0 019-9 9 9 0 019 9 9 9 0 01-9 9m1-6.1c-.2-.1-.2-.1-1-.1-1 0-1.8.8-1.8 1.8 0 1.2 1.3 1.8 1.8 1.8.6 0 1.1-.3 1.5-.7.4-.4.5-.9.5-1.4-.1-.8-.6-1.3-.9-1.4m.2-3.2c-.3-.2-.6-.3-.9-.3h-.1c-.4 0-.8.2-1.1.5-.3.3-.4.7-.4 1.1s.1.8.4 1.1c.3.3.7.5 1.1.5h.1c.4 0 .8-.2 1.1-.5.3-.3.4-.7.4-1.1s-.1-.8-.4-1.1m4.3.4c-.2-.1-.5-.1-.8 0-.4 0-.8.2-1.1.5-.3.3-.4.7-.4 1.1s.1.8.4 1.1c.3.3.7.5 1.1.5.3 0 .6-.1.8-.1.2.1.2.1.2.2 0 .1 0 .2-.1.3-.1.1-.1.2-.2.3s-.2.2-.2.3c-.1.1-.1.1-.1.2s0 .2.1.3c.1.1.1.1.1.2s0 .2-.1.3m1 6.1c-.2.1-.2.1-1 .1-1 0-1.8-.8-1.8-1.8 0-1.2 1.3-1.8 1.8-1.8.6 0 1.1.3 1.5.7.4.4.5.9.5 1.4-.1.8-.6 1.3-.9 1.4m.2-3.2c-.3-.2-.6-.3-.9-.3h-.1c-.4 0-.8.2-1.1.5-.3.3-.4.7-.4 1.1s.1.8.4 1.1c.3.3.7.5 1.1.5h.1c.4 0 .8-.2 1.1-.5.3-.3.4-.7.4-1.1s-.1-.8-.4-1.1m4.3.4c-.2-.1-.5-.1-.8 0-.4 0-.8.2-1.1.5-.3.3-.4.7-.4 1.1s.1.8.4 1.1c.3.3.7.5 1.1.5.3 0 .6-.1.8-.1.2.1.2.1.2.2 0 .1 0 .2-.1.3-.1.1-.1.2-.2.3s-.2.2-.2.3c-.1.1-.1.1-.1.2s0 .2.1.3c.1.1.1.1.1.2s0 .2-.1.3m1 6.1c-.2.1-.2.1-1 .1-1 0-1.8-.8-1.8-1.8 0-1.2 1.3-1.8 1.8-1.8.6 0 1.1.3 1.5.7.4.4.5.9.5 1.4-.1.8-.6 1.3-.9 1.4"></path>
+        </svg>
+    </a>
+
+</body>
+</html>
